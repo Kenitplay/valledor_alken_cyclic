@@ -8,11 +8,11 @@ public class cyclic_dfs {
     private static boolean dfs(int node, List<List<Integer>> adj, int[] state) {
         state[node] = 1; 
         dfsOrder.add(node);  
-        System.out.println("Visiting: " + (char)('a' + node));  // Show current node
+        System.out.println("Visiting: " + (char)('a' + node)); 
 
         for (int neighbor : adj.get(node)) {
             if (state[neighbor] == 1) {
-                return true;  // Cycle detected
+                return true;  
             }
             if (state[neighbor] == 0 && dfs(neighbor, adj, state)) {
                 return true;
