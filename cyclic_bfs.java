@@ -15,7 +15,7 @@ public class cyclic_bfs {
         while (!queue.isEmpty()) {
             int node = queue.poll();
             bfsOrder.add(node);
-            System.out.println("Visiting: " + (char)('a' + node)); // Optional visit log
+            System.out.println("Visiting: " + (char)('a' + node)); 
 
             for (int neighbor : adj.get(node)) {
                 if (state[neighbor] == 0) {
@@ -23,10 +23,10 @@ public class cyclic_bfs {
                     parent[neighbor] = node;
                     queue.add(neighbor);
                 } else if (neighbor != parent[node]) {
-                    return true; // Found a back-edge (cycle)
+                    return true;
                 }
             }
-            state[node] = 2;  // visited
+            state[node] = 2;  
         }
         return false;
     }
